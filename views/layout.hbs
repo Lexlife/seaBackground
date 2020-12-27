@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{title}}</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <!-- The video -->
+  <video autoplay muted loop id="myVideo">
+    <source src="/video/wave.mp4" type="video/mp4">
+  </video>
+
+  <!-- Optional: some overlay text to describe the video -->
+  <div class="content">
+    <div id="bar">
+      <ul>
+        <li><a href="/">Главная страница</a></li>
+        {{#if username}}
+        <li><a href="/shoppingcart">Корзина</a></li>
+        <li><a href="/users/logout">Сменить пользователя</a></li>
+        {{else}}
+        <li><a href="/users/signin">Войти в личный кабинет</a></li>
+        <li><a href="/users/signup">Создать личный кабинет</a></li>
+        {{/if}}
+      </ul>
+      {{{body}}}
+    </div>
+  </div>
+</body>
+
+</html>
